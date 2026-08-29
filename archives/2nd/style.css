@@ -1,0 +1,789 @@
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* カラーパレット */
+:root {
+  --primary-blue: #3396ce;
+  --light-blue: #84c4d5;
+  --light-green: #f5f8f6;
+  --white: #ffffff;
+  --dark-text: #333333;
+  --gray-text: #666666;
+}
+
+/* ベースフォント */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--dark-text);
+  line-height: 1.6;
+  background-color: var(--light-green);
+}
+
+/* コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary-blue);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-blue);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-text);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* メインビジュアル */
+.hero {
+  height: 100vh;
+  background: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-logo {
+  margin-bottom: 40px;
+}
+
+.logo-circle {
+  width: 300px;
+  height: 300px;
+  border: 5px solid var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.logo-text h1 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.hero-info {
+  font-size: 18px;
+}
+
+.hero-date {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-location {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-mission {
+  font-size: 22px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.hero-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* セクション共通 */
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--light-blue);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 概要セクション */
+.overview {
+  background-color: var(--white);
+}
+
+.overview-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-box {
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  color: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mission-box h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mission-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.description {
+  text-align: center;
+  font-size: 18px;
+  color: var(--gray-text);
+}
+
+/* 参加方法セクション */
+.participation {
+  background-color: var(--light-green);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.info-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.status-notice {
+  background-color: #ff6b6b;
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.qr-placeholder {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  background-color: var(--light-green);
+  border: 2px dashed var(--light-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  color: var(--gray-text);
+}
+
+/* スケジュールセクション */
+.schedule {
+  background-color: var(--white);
+}
+
+.schedule-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: var(--light-green);
+  border-radius: 10px;
+  border-left: 5px solid var(--light-blue);
+}
+
+.schedule-date {
+  font-weight: 700;
+}
+
+.schedule-event {
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ルールセクション */
+.rules {
+  background-color: var(--light-green);
+  text-align: center;
+}
+
+.rules-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--gray-text);
+}
+
+.rules-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  color: var(--white);
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rules-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(51, 150, 206, 0.3);
+}
+
+/* スポンサーセクション */
+.sponsor {
+  background-color: var(--white);
+}
+
+.sponsor-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sponsor-intro {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--gray-text);
+}
+
+.sponsor-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.sponsor-fee {
+  background-color: var(--light-green);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.sponsor-fee h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.fee {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--primary-blue);
+}
+
+.sponsor-benefits {
+  background-color: var(--light-green);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.sponsor-benefits h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.sponsor-benefits ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.sponsor-benefits li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.sponsor-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.sponsor-notes p {
+  font-size: 14px;
+  color: var(--gray-text);
+  margin-bottom: 5px;
+}
+
+.sponsor-application {
+  background-color: var(--light-green);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.sponsor-application h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.deadline {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 5px;
+}
+
+.closed {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ff6b6b;
+  color: var(--white);
+  border-radius: 5px;
+}
+
+/* 資料セクション */
+.resources {
+  background-color: var(--light-green);
+  text-align: center;
+}
+
+.resources-content p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: var(--gray-text);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resource-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(51, 150, 206, 0.2);
+}
+
+.resource-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.resource-item p {
+  font-size: 16px;
+  color: var(--gray-text);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.resource-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  color: var(--white);
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(51, 150, 206, 0.3);
+}
+
+/* 協賛企業セクション */
+.sponsors {
+  background-color: var(--white);
+  text-align: center;
+}
+
+.sponsors-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsors-intro {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--gray-text);
+}
+
+.sponsors-note {
+  font-size: 14px;
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-green);
+  border: 2px solid var(--light-blue);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--primary-blue);
+  font-size: 16px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.sponsor-logo:not(.coming-soon) .logo-placeholder {
+  background: linear-gradient(135deg, var(--light-green), var(--white));
+  cursor: pointer;
+}
+
+.sponsor-logo:not(.coming-soon) .logo-placeholder:hover {
+  background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+  color: var(--white);
+  border-color: var(--primary-blue);
+}
+
+.sponsor-logo.coming-soon .logo-placeholder {
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.sponsor-recruitment {
+  background-color: var(--light-green);
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+.sponsor-recruitment p {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.sponsor-link-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  color: var(--white);
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(51, 150, 206, 0.3);
+}
+
+/* お問い合わせセクション */
+.contact {
+  background-color: var(--white);
+  text-align: center;
+}
+
+.contact-info {
+  font-size: 18px;
+}
+
+.phone {
+  margin-top: 20px;
+}
+
+/* フッター */
+.footer {
+  background-color: var(--dark-text);
+  color: var(--white);
+  padding: 40px 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.organizers {
+  margin-bottom: 20px;
+}
+
+.organizers p {
+  margin-bottom: 10px;
+}
+
+.copyright {
+  border-top: 1px solid #555;
+  padding-top: 20px;
+  color: #ccc;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .logo-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .logo-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-date {
+    font-size: 20px;
+  }
+
+  .hero-location {
+    font-size: 18px;
+  }
+
+  .hero-mission {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .schedule-event {
+    text-align: center;
+  }
+
+  .sponsor-info {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo-text h1 {
+    font-size: 24px;
+  }
+
+  .hero-mission {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .mission-box {
+    padding: 25px;
+  }
+
+  .info-item {
+    padding: 20px;
+  }
+
+  .schedule-item {
+    padding: 15px;
+  }
+
+  .sponsor-fee,
+  .sponsor-benefits,
+  .sponsor-application {
+    padding: 20px;
+  }
+
+  .sponsors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .sponsor-logo {
+    height: 100px;
+  }
+
+  .logo-placeholder {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .sponsor-recruitment {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .resource-item {
+    padding: 20px;
+  }
+}
