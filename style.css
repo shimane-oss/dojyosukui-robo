@@ -168,6 +168,12 @@ body {
   z-index: 1;
 }
 
+.event-ended-info {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 /* セクション共通 */
 section {
   padding: 80px 0;
@@ -191,6 +197,27 @@ section {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* 大会結果セクション */
+.result {
+  background-color: var(--light-green);
+}
+
+.result-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.group-photo-content {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.group-photo-content img {
+  width: 100%;
+  height: auto;
 }
 
 /* 概要セクション */
@@ -333,7 +360,9 @@ section {
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .rules-button:hover {
@@ -478,7 +507,9 @@ section {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .resource-item:hover {
@@ -508,7 +539,9 @@ section {
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .resource-button:hover {
@@ -618,7 +651,9 @@ section {
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .sponsor-link-button:hover {
